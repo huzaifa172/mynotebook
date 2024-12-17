@@ -1,0 +1,21 @@
+.m-content-cont{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+}
+@font-face {
+  font-family: Montserrat-medium;
+  src: url(../images/Montserrat-Medium.ttf);
+}
+@font-face {
+  font-family: Montserrat-Light;
+  src: url(../images/Montserrat-Light.ttf);
+}
+
+.m-content-cont .title{
+  font-family: Montserrat-medium;  
+}
+.m-content-cont .details{
+font-family: Montserrat-Light;
+}

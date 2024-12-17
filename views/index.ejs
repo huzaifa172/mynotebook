@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>My Notes</title>
+</head>
+<body>
+  <div class="m-cont">
+  
+  
+    <div class="first-sec-nav">
+        <!-- nav bar  -->
+    <div class="nav-cont">
+  
+    <div class="first-child">
+
+    <div class="side-icon"> <i class="fa-solid fa-bars"></i> </div>
+    <div class="logo"><img src="/images/hadfisolutions.png" alt=""></div>
+    <div class="search"><input type="search" name="search" id="search" placeholder="Search"></div>
+   </div>
+   
+   <div class="second-child">
+
+     <div class="setting"></div>
+   </div>
+
+
+        </div>
+  </div>
+                                                                            <!-- nav ends here  -->
+  <!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+  
+  <div class="second-sec-sidebar-inputs-content">
+
+    <!-- side bar     -->
+  
+    <div class="side-bar-cont"></div>
+  
+                                                                                    <!-- side bar ends here  -->
+    <!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <div class="inputs-content">
+
+    <!-- create task  -->
+    <div class="create-cont">
+      <form action="/create" method="post">
+        <input class="inpts" type="text" name="title" id="" placeholder="Title here">
+        <textarea class="inpts textarea" type="text" name="details" placeholder="Details here"></textarea>
+        <input class="submit-btn" type="submit" value="Create" name="submit">
+      </form>
+      
+    </div>
+    
+  
+  
+       <!-- create task ends here  -->
+       <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+       
+       <!-- task here -->
+       
+       
+       <div class="tasks-cont">
+        <% if(task.length > 0){%>
+          <% task.forEach(function(e){ %>
+          <div class="task">
+            <div class="content">
+              <h1 class="task-title"><%= e.title%></h1>
+              <h3 class="task-details"><%=e.details%></h3>
+              <a href="/read/<%=e._id%>">Read more...</a>
+            </div>
+            <div class="changes">
+              <a href="/edit/<%=e._id%>">Edit</a>
+              <a class="delete" href="/delete/<%=e._id%>">Delete</a>
+            </div>      
+          </div>
+          <%}) }else{%>
+            <h1>No Taks here </h1>
+          <%}%>
+        </div>                                          
+       <!-- task content ends here  -->
+       <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+  </div>
+  <!-- inputs-content  ends -->
+</div>
+<!-- second-sec-sidebar-inputs-content ends -->
+
+
+
+    </div>
+</body>
+</html>
